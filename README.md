@@ -2,10 +2,13 @@
 
 Preprocessing steps and scripts to take business data to machine learning model ready time series and other sequential formats.
 
-We organized this pre-processing into four sequential functional steps with an associated script for each. The first is ‘filtering and formatting’ from the source tables of interest. This reduces the data bulk for our design phase. The second script performs ‘joins, folds and conversions’. It joins our tables of interest, folds the data (sequentially or in aggregate) into our final timestep of interest for our sequential models, and generates meaningful numeric values from non-numeric information. The third script performs feature engineering. In this script we engineered additional features and augmented the data in order to provide our models with more signal. We iterate on this script as we refine the model.
+### Why Organize
 
-We organize these scripts separately so that we can deploy each script in turn in operation into SQL, while leaving us flexibility to iterate those remaining as we mature our understanding and approach to the model which allows us to speed our collaboration in the later scripts.
+We organized this pre-processing into four sequential functional steps with an associated script for each.  We organize these scripts separately so that we can deploy each script in turn in operation into SQL, while leaving us flexibility to iterate those remaining as we mature our understanding and approach to the model which allows us to speed our collaboration in the later scripts.
 
+### Pre-processing Notebooks
+
+The first is ‘filtering and formatting’ from the source tables of interest. This reduces the data bulk for our design phase. The second script performs ‘joins, folds and conversions’. It joins our tables of interest, folds the data (sequentially or in aggregate) into our final timestep of interest for our sequential models, and generates meaningful numeric values from non-numeric information. The third script performs feature engineering. In this script we engineered additional features and augmented the data in order to provide our models with more signal. We iterate on this script as we refine the model.
 To illustrate we highlight just the time series pre-processing and not the text pre-pro cessing. This github repo describes the preprocessing in more detail with more extensive information.
 
 a.)     Filtering and Formatting: The goal of this step is to reduce the size of the data passed along to subsequent steps and to do rudimentary formatting and cleaning (e.g. replace missing values and convert datatypes). For example, we selected columns of interest and filtered to eliminate account types that are not in our consideration set. We also limit the history for each account that we bring forward for sampling, reducing the size of the transaction table substantially. With the size of the data reduced, the time required to design the subsequent steps is much less. 
