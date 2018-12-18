@@ -1,4 +1,4 @@
-# Tabular Data Preprocessing for Sequential Machine Learning Models
+## Tabular Data Preprocessing for Sequential Machine Learning Models
 
 This repo contains the preprocessing steps and scripts to take business data to machine learning model ready time series and other sequential formats.
 
